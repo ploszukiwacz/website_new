@@ -1,3 +1,5 @@
+import type { APIRoute } from 'astro';
+
 export const GET: APIRoute = async () => {
   try {
     const images = Array.from({ length: 15 }, (_, i) => `vrc${i + 1}.png`);
