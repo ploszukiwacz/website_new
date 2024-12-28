@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import node from "@astrojs/node";
+import cloudflare from '@astrojs/cloudflare';
 
 const DOMAINS = {
   primary: 'https://ploszukiwacz.pl',
@@ -30,8 +30,8 @@ const currentDomain = validateDomain(
 
 export default defineConfig({
   output: 'server',
-  adapter: node({
-    mode: 'standalone'
+  adapter: cloudflare({
+    mode: 'directory'
   }),
   site: process.env.NODE_ENV === 'development' 
     ? DOMAINS.development 
