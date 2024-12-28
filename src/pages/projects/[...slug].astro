@@ -7,6 +7,8 @@ import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
 import Link from "@components/Link.astro";
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const projects = (await getCollection("projects"))
     .filter(post => !post.data.draft)

@@ -13,11 +13,6 @@ export const HOME: Metadata = {
   DESCRIPTION: "PlOszukiwacz's Portfolio Website",
 };
 
-export const BLOG: Metadata = {
-  TITLE: "Blog",
-  DESCRIPTION: "A collection of articles on topics I am passionate about.",
-};
-
 export const WORK: Metadata = {
   TITLE: "Work",
   DESCRIPTION: "Where I have worked and what I have done.",
@@ -40,5 +35,13 @@ export const SOCIALS: Socials = [
   { 
     NAME: "discord",
     HREF: "https://discord.com/users/783390611121111040",
+  },
+  {
+    NAME: "bsky",
+    HREF: "https://bsky.app/profile/ploszukiwacz.bsky.social"
+  },
+  {
+    NAME: "mastodon",
+    HREF: "https://mastodon.social/@ploszukiwacz"
   }
 ];
