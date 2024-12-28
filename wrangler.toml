@@ -6,6 +6,3 @@ bucket = "./dist"
 
 [build]
 command = "pnpm run build"
-
-[build.environment]
-NODE_VERSION = "20"
