@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Online Radio Player</title>
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <div class="radio-player">
+            <h1>Online Radio Player</h1>
+            <div class="controls">
+                <label for="country-select">Select Country:</label>
+                <select id="country-select">
+                    <option value="">--All Countries--</option>
+                </select>
+
+                <label for="station-select">Select Station:</label>
+                <select id="station-select">
+                    <option value="">--Select Station--</option>
+                </select>
+
+                <div class="theme-switcher">
+                    <label for="theme-toggle">Dark Mode:</label>
+                    <input type="checkbox" id="theme-toggle" />
+                </div>
+
+                <div class="audio-controls"></div>
+            </div>
+
+            <audio id="audio-player" controls hidden></audio>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>

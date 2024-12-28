@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}
+
+.radio-player {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+label {
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+select {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.audio-controls {
+    margin-top: 15px;
+}
+
+button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+#volume-control {
+    margin-left: 20px;
+}
+
+/* Dark theme styles */
+body.dark-mode {
+    background-color: #333;
+    color: #ddd;
+}
+
+.radio-player.dark-mode {
+    background-color: #444;
+    color: #ddd;
+}
+
+select,
+input[type="checkbox"] {
+    border: 1px solid #666;
+    background-color: #555;
+    color: #ddd;
+}
+
+select option {
+    background-color: #444;
+    color: #ddd;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+}
+
+button:disabled {
+    background-color: #555;
+}
+
+.theme-switcher {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
