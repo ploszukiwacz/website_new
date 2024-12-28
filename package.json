@@ -12,6 +12,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
+  "engines": {
+    "node": ">=20.11.1"
+  },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/mdx": "4.0.3",
