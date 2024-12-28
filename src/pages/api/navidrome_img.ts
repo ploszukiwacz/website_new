@@ -11,7 +11,13 @@ export const GET: APIRoute = async () => {
       status: 302,
       headers: {
         'Location': imagePath,
-        'Cache-Control': 'no-cache, no-store, must-revalidate'
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0',
+        'Surrogate-Control': 'no-store',
+        'Access-Control-Allow-Origin': '*',
+        'Vary': '*'
       }
     });
   } catch (error) {
