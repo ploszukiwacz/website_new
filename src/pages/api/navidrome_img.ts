@@ -1,17 +1,6 @@
-import type { APIRoute } from 'astro';
-
 export const GET: APIRoute = async () => {
   try {
-    const images = [
-      'vrc1.png',
-      'vrc2.png',
-      'vrc3.png',
-      'vrc4.png',
-      'vrc5.png',
-      'vrc6.png',
-      'vrc7.png',
-      'vrc8.png'
-    ];
+    const images = Array.from({ length: 15 }, (_, i) => `vrc${i + 1}.png`);
 
     const randomImage = images[Math.floor(Math.random() * images.length)];
     const imagePath = `/vrc/${randomImage}`;
@@ -24,7 +13,6 @@ export const GET: APIRoute = async () => {
       }
     });
   } catch (error) {
-    console.error('Error:', error);
     return new Response('Error', { status: 500 });
   }
 };
