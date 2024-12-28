@@ -1,26 +1,28 @@
 import type { APIRoute } from 'astro';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 
 export const GET: APIRoute = async () => {
   try {
     const images = Array.from({ length: 15 }, (_, i) => `vrc${i + 1}.png`);
     const randomImage = images[Math.floor(Math.random() * images.length)];
-    const timestamp = Date.now();
-    const imagePath = `/vrc/${randomImage}?t=${timestamp}`;
-
-    return new Response('', {
-      status: 302,
+    const imagePath = path.join(process.cwd(), 'public', 'vrc', randomImage);
+    
+    const imageBuffer = await fs.readFile(imagePath);
+    
+    return new Response(imageBuffer, {
       headers: {
-        'Location': imagePath,
+        'Content-Type': 'image/png',
         'Cache-Control': 'no-store, private, max-age=0, must-revalidate, proxy-revalidate',
         'Pragma': 'no-cache',
         'Expires': '0',
         'Surrogate-Control': 'no-store',
         'Access-Control-Allow-Origin': '*',
-        'Vary': '*',
-        'X-Discord-No-Cache': timestamp.toString()
+        'Vary': '*'
       }
     });
   } catch (error) {
-    return new Response('Error', { status: 500 });
+    console.error('Error serving image:', error);
+    return new Response('Error loading image', { status: 500 });
   }
 };
