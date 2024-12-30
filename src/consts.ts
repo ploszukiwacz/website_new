@@ -23,6 +23,49 @@ export const PROJECTS: Metadata = {
   DESCRIPTION: "A collection of my projects, with links to repositories and demos.",
 };
 
+export const FRIENDS: Metadata = {
+  TITLE: "Friends",
+  DESCRIPTION: "A list of my friends.",
+  list: [
+    {
+      name: "Mkeko",
+      url: "https://mkeko.pro"
+    },
+    {
+      name: "GizzyUwU",
+      url: "https://www.gizzy.pro"
+    },
+    {
+      name: "Felix",
+      url: "https://felixrnr.com"
+    },
+    {
+      name: "BoomBolt",
+      url: "https://boombolt.xyz/"
+    },
+    {
+      name: "Aqui",
+      url: "https://aquiffoo.vercel.app/"
+    },
+    {
+      name: "ComputerBlade",
+      url: "https://computerblade.is-a.dev/"
+    },
+    {
+      name: "FlameFox",
+      url: ""
+    },
+    {
+      name: "Goober",
+      url: "https://mateishome.page/"
+    },
+    {
+      name: "Cyteon",
+      url: "https://cyteon.tech"
+    }
+  ]
+};
+
 export const SOCIALS: Socials = [
   { 
     NAME: "twitter-x",

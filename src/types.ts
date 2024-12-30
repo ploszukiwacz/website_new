@@ -6,9 +6,16 @@ export type Site = {
   NUM_PROJECTS_ON_HOMEPAGE: number;
 };
 
+export type Friend = {
+  name: string;
+  url: string;
+}
+
+
 export type Metadata = {
   TITLE: string;
   DESCRIPTION: string;
+  list?: Friend[];
 };
 
 export type Socials = {
