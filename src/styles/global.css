@@ -1,31 +1,70 @@
+@import './catppuccin.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    color-scheme: light;
+    --background: 239 241 245;
+    --foreground: 76 79 105;
+    
+    --color-rosewater: 220 138 120;
+    --color-flamingo: 221 120 120;
+    --color-pink: 234 118 203;
+    --color-mauve: 136 57 239;
+    --color-red: 210 15 57;
+    --color-maroon: 230 69 83;
+    --color-peach: 254 100 11;
+    --color-yellow: 223 142 29;
+    --color-green: 64 160 43;
+    --color-teal: 23 146 153;
+    --color-sky: 4 165 229;
+    --color-sapphire: 32 159 181;
+    --color-blue: 30 102 245;
+    --color-lavender: 114 135 253;
+    --color-surface: 204 208 218;
+    --color-mantle: 230 233 239;
+  }
+
+  :root[class~="dark"] {
+    color-scheme: dark;
+    --background: 30 30 46;
+    --foreground: 205 214 244;
+    
+    --color-rosewater: 245 224 220;
+    --color-flamingo: 242 205 205;
+    --color-pink: 245 194 231;
+    --color-mauve: 203 166 247;
+    --color-red: 243 139 168;
+    --color-maroon: 235 160 172;
+    --color-peach: 250 179 135;
+    --color-yellow: 249 226 175;
+    --color-green: 166 227 161;
+    --color-teal: 148 226 213;
+    --color-sky: 137 220 235;
+    --color-sapphire: 116 199 236;
+    --color-blue: 137 180 250;
+    --color-lavender: 180 190 254;
+    --color-surface: 49 50 68;
+    --color-mantle: 24 24 37;
+  }
+}
+
 html {
   overflow-y: scroll;
-  color-scheme: light;
-}
-
-html.dark {
-  color-scheme: dark;
-}
-
-html,
-body {
-  @apply size-full;
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
 }
 
 body {
   @apply font-sans antialiased;
   @apply flex flex-col;
-  @apply bg-stone-100 dark:bg-stone-900;
-  @apply text-black/50 dark:text-white/75;
 }
 
 header {
   @apply fixed top-0 left-0 right-0 z-50 py-5;
-  @apply bg-stone-100/75 dark:bg-stone-900/25;
+  @apply bg-stone-100/75 dark:bg-[rgb(var(--color-mantle))]/75;
   @apply backdrop-blur-sm saturate-200;
 }
 
