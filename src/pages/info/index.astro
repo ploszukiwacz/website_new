@@ -1,0 +1,104 @@
+---
+import Container from "@components/Container.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+import { INFO } from "@consts";
+import { Image } from "astro:assets";
+
+const GITHUB_USERNAME = "PlOszukiwaczDEV";
+---
+
+<PageLayout title={INFO.TITLE} description={INFO.DESCRIPTION}>
+  <Container>
+    <h4 class="animate font-semibold text-black dark:text-white mb-8">
+      Here is some info about me
+    </h4>
+    <section>
+      <article class="space-y-4">
+        <p class="animate">
+          Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow!
+          Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow!
+          Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow!
+          Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow!
+          Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow!
+          Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow!
+          Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow!
+          Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow!
+          (it would be funny if i forgor to replace this text lmao)
+        </p>
+        <p class="animate">
+          <h4 class="animate font-semibold text-black dark:text-white mb-8">
+            Here are my hardware specs
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate">
+            <div class="spec-card">
+              <span class="spec-title">CPU</span>
+              <p class="mt-2">AMD Athlon X4 860K Quad Core (4) @ 3.70 GHz</p>
+            </div>
+            
+            <div class="spec-card">
+              <span class="spec-title">GPU</span>
+              <p class="mt-2">NVIDIA GeForce GTX 1660 SUPER</p>
+            </div>
+          
+            <div class="spec-card">
+              <span class="spec-title">RAM</span>
+              <p class="mt-2">12GB DDR3</p>
+            </div>
+
+            <div class="spec-card">
+              <span class="spec-title">Storage</span>
+              <p class="mt-2">256GB Goodram SSD</p>
+            </div>
+
+            <div class="spec-card">
+              <span class="spec-title">Motherboard</span>
+              <p class="mt-2">Gigabyte GA-F2A88XM-DS2 (Rev. 3.1)</p>
+            </div>
+
+            <div class="spec-card">
+              <span class="spec-title">Monitor</span>
+              <p class="mt-2">I forgor</p>
+            </div>
+          </div>
+        </p>
+      </article>
+    </section>
+    <br>
+    <div class="space-y-16">
+      <h4 class="animate font-semibold text-black dark:text-white mb-8 animate">
+        Here are my github stats
+      </h4>
+      <section>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 animate">
+          <!-- GitHub Stats Card -->
+          <div class="p-4 bg-[#cdd6f4] dark:bg-[#1e1e2e] rounded-lg shadow-md hover:scale-105rounded-lg shadow-md hover:scale-105 transition-all duration-300 animate">
+            <Image
+              src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&theme=catppuccin_mocha&hide_border=true&count_private=true`}
+              alt="GitHub Stats"
+              class="w-full"
+              width={495}
+              height={195}
+              loading="eager"
+              decoding="sync"
+              priority={true}
+            />
+          </div>
+
+          <!-- Top Languages Card -->
+          <div class="p-4 bg-[#cdd6f4] dark:bg-[#1e1e2e] rounded-lg shadow-md hover:scale-105 transition-all duration-300 animate">
+            <Image
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USERNAME}&layout=compact&theme=catppuccin_mocha&hide_border=true`}
+              alt="Top Languages"
+              class="w-full"
+              width={495}
+              height={195}
+              loading="eager"
+              decoding="sync"
+              priority={true}
+            />
+          </div>
+        </div>
+      </section>     
+    </div>
+  </Container>
+</PageLayout>

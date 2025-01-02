@@ -110,3 +110,13 @@ html #back-to-top {
 html.scrolled #back-to-top {
   @apply opacity-100 pointer-events-auto;
 }
+
+.spec-card {
+  @apply p-4 rounded-lg shadow-md hover:scale-105 transition-all duration-300;
+  @apply bg-[--ctp-latte-base] dark:bg-[--ctp-mocha-base];
+}
+
+.spec-title {
+  @apply font-bold;
+  @apply text-[--ctp-latte-blue] dark:text-[--ctp-mocha-blue];
+}
