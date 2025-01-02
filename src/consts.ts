@@ -53,7 +53,7 @@ export const FRIENDS: Metadata = {
     },
     {
       name: "FlameFox",
-      url: ""
+      url: "#"
     },
     {
       name: "Goober",
