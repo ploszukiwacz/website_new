@@ -23,40 +23,65 @@ const GITHUB_USERNAME = "PlOszukiwaczDEV";
           Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow!
           Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow!
           Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow! Meow!
+          Meow!
           (it would be funny if i forgor to replace this text lmao)
+        </p>
+        <div class="space-y-16">
+          <h4 class="animate font-semibold text-black dark:text-white mb-8 animate">
+            Here are my skills and things i use
+          </h4>
+          <section>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 animate">
+              <div class="card-element">
+                <span class="card-element-title">Languages</span>
+                <p class="mt-2">HTML, CSS, JavaScript, TypeScript, Python</p>
+              </div>
+              <div class="card-element">
+                <span class="card-element-title">Frameworks</span>
+                <p class="mt-2">Astro</p>
+              </div>
+              <div class="card-element">
+                <span class="card-element-title">Tools</span>
+                <p class="mt-2">VSCode, GitHub, GitKraken, Termius, NeoVim, Docker, Git, Insomnia, Jetbrains, Putty</p>
+              </div>
+              <div class="card-element">
+                <span class="card-element-title">Operating Systems</span>
+                <p class="mt-2">Windows 10 IoT Enterprise LTSC, Arch Linux</p>
+            </div>
+          </section>
         </p>
         <p class="animate">
           <h4 class="animate font-semibold text-black dark:text-white mb-8">
             Here are my hardware specs
           </h4>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate">
-            <div class="spec-card">
-              <span class="spec-title">CPU</span>
+            <div class="card-element">
+              <span class="card-element-title">CPU</span>
               <p class="mt-2">AMD Athlon X4 860K Quad Core (4) @ 3.70 GHz</p>
             </div>
             
-            <div class="spec-card">
-              <span class="spec-title">GPU</span>
+            <div class="card-element">
+              <span class="card-element-title">GPU</span>
               <p class="mt-2">NVIDIA GeForce GTX 1660 SUPER</p>
             </div>
           
-            <div class="spec-card">
-              <span class="spec-title">RAM</span>
+            <div class="card-element">
+              <span class="card-element-title">RAM</span>
               <p class="mt-2">12GB DDR3</p>
             </div>
 
-            <div class="spec-card">
-              <span class="spec-title">Storage</span>
+            <div class="card-element">
+              <span class="card-element-title">Storage</span>
               <p class="mt-2">256GB Goodram SSD</p>
             </div>
 
-            <div class="spec-card">
-              <span class="spec-title">Motherboard</span>
+            <div class="card-element">
+              <span class="card-element-title">Motherboard</span>
               <p class="mt-2">Gigabyte GA-F2A88XM-DS2 (Rev. 3.1)</p>
             </div>
 
-            <div class="spec-card">
-              <span class="spec-title">Monitor</span>
+            <div class="card-element">
+              <span class="card-element-title">Monitor</span>
               <p class="mt-2">I forgor</p>
             </div>
           </div>
@@ -64,6 +89,8 @@ const GITHUB_USERNAME = "PlOszukiwaczDEV";
       </article>
     </section>
     <br>
+
+    <!-- Github Stats -->
     <div class="space-y-16">
       <h4 class="animate font-semibold text-black dark:text-white mb-8 animate">
         Here are my github stats
@@ -71,7 +98,7 @@ const GITHUB_USERNAME = "PlOszukiwaczDEV";
       <section>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 animate">
           <!-- GitHub Stats Card -->
-          <div class="p-4 bg-[#cdd6f4] dark:bg-[#1e1e2e] rounded-lg shadow-md hover:scale-105rounded-lg shadow-md hover:scale-105 transition-all duration-300 animate">
+          <div class="card-element">
             <Image
               src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&theme=catppuccin_mocha&hide_border=true&count_private=true`}
               alt="GitHub Stats"
@@ -85,7 +112,7 @@ const GITHUB_USERNAME = "PlOszukiwaczDEV";
           </div>
 
           <!-- Top Languages Card -->
-          <div class="p-4 bg-[#cdd6f4] dark:bg-[#1e1e2e] rounded-lg shadow-md hover:scale-105 transition-all duration-300 animate">
+          <div class="card-element">
             <Image
               src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USERNAME}&layout=compact&theme=catppuccin_mocha&hide_border=true`}
               alt="Top Languages"
