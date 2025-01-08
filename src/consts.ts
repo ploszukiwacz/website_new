@@ -1,7 +1,7 @@
 import type { Site, Metadata, Socials } from "@types";
 
 export const SITE: Site = {
-  NAME: "PlOszukiwacz",
+  NAME: "IGoByARealyLongNickName",
   EMAIL: "admin@ploszukiwacz.pl",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 2,
@@ -27,6 +27,11 @@ export const INFO: Metadata = {
   TITLE: "Info",
   DESCRIPTION: "Some info about me.",
 };
+export const DONATE: Metadata = {
+  TITLE: "Donate",
+  DESCRIPTION: "Offical ways of donating to me.",
+};
+
 
 export const FRIENDS: Metadata = {
   TITLE: "Friends",
