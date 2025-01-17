@@ -13,7 +13,8 @@ const radioStations = {
     
   ],
   UNKNOWN: [
-    { name: "Portal Radio", url: "https://radio.creeperita104.is-a.dev/listen/portal_radio/radio.mp3" }
+    { name: "Portal Radio", url: "https://radio.creeperita104.is-a.dev/listen/portal_radio/radio.mp3" },
+    { name: "Newgrounds Radio", url: "https://stream.newgroundsradio.com/radio.mp3"}
   ]
 };
 
