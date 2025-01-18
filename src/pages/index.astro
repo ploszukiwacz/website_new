@@ -6,6 +6,7 @@ import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
 // import { dateRange } from "@lib/utils";
 import { SITE, HOME, SOCIALS } from "@consts";
+import { Image } from "astro:assets";
 
 // const blog = (await getCollection("blog"))
 //   .filter(post => !post.data.draft)
@@ -45,6 +46,17 @@ const projects = (await getCollection("projects"))
           </p>
           <p class="animate">
             I am currently contributing to a desktop app for bsky.
+          </p>
+          <p class="animate">
+            Fun Fact: This website requires javascript.
+          </p>
+          <p class="animate flex flex-row flex-wrap gap-[5px] max-w-full">
+            <a href="https://mozilla.org/en-US/firefox/new">
+              <Image src="/88x31/firefox.png" width="88" height="31" alt="Firefox" title="Firefox" />
+            </a>
+            <a href="https://ublockorigin.com">
+              <Image src="/88x31/ublock.png" width="88" height="31" alt="UBlock Origin" title="UBlock Origin" />
+            </a>
           </p>
         </article>
       </section>
