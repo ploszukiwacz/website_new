@@ -91,14 +91,25 @@ stationSelect.addEventListener("change", function () {
   }
 });
 
-// Handle theme toggle
+// Handle theme toggle - optimized version
 themeToggle.addEventListener("change", function () {
-  document.body.classList.toggle("dark-mode", this.checked);
-  const player = document.querySelector(".radio-player");
-  player.classList.toggle("dark-mode", this.checked);
+    const isDarkMode = this.checked;
+    requestAnimationFrame(() => {
+        document.body.classList.toggle("dark-mode", isDarkMode);
+        document.querySelector(".radio-player").classList.toggle("dark-mode", isDarkMode);
+        localStorage.setItem("darkMode", isDarkMode);
+    });
 });
 
-// Initialize the player
+// Initialize the player - optimized version
 window.onload = function () {
-  populateCountries();
+    populateCountries();
+    
+    if (localStorage.getItem("darkMode") === "true") {
+        themeToggle.checked = true;
+        requestAnimationFrame(() => {
+            document.body.classList.add("dark-mode");
+            document.querySelector(".radio-player").classList.add("dark-mode");
+        });
+    }
 };

@@ -4,26 +4,28 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-color: #eff1f5; /* base */
+    color: #4c4f69; /* text */
     margin: 0;
-    transition:
-        background-color 0.3s,
-        color 0.3s;
+    transition: background-color 0.2s;
+    will-change: background-color;
 }
 
 .radio-player {
-    background-color: #fff;
+    background-color: #e6e9ef; /* surface0 */
+    color: #4c4f69; /* text */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition:
-        background-color 0.3s,
-        color 0.3s;
+    transition: background-color 0.2s;
+    transform: translateZ(0);
+    will-change: background-color;
 }
 
 .controls {
     margin-top: 20px;
+    transform: translateZ(0);
 }
 
 label {
@@ -36,68 +38,93 @@ select {
     margin-bottom: 10px;
     width: 200px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #8c8fa1; /* overlay0 */
+    background-color: #ccd0da; /* surface1 */
+    color: #4c4f69; /* text */
+    transition: all 0.2s;
+}
+
+select option {
+    background-color: #ccd0da; /* surface1 */
+    color: #4c4f69; /* text */
 }
 
 .audio-controls {
     margin-top: 15px;
+    transform: translateZ(0);
 }
 
 button {
     padding: 10px 15px;
     margin-right: 10px;
     border: none;
-    background-color: #007bff;
-    color: white;
+    background-color: #1e66f5; /* blue */
+    color: #eff1f5; /* base */
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
+    transition: all 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #7287fd; /* lavender */
 }
 
 button:disabled {
-    background-color: #aaa;
-    cursor: not-allowed;
+    background-color: #ccd0da; /* surface1 */
+    color: #8c8fa1; /* overlay0 */
 }
 
 #volume-control {
     margin-left: 20px;
 }
 
-/* Dark theme styles */
+input[type="checkbox"] {
+    accent-color: #1e66f5; /* blue */
+}
+
+/* Dark theme styles - Catppuccin Mocha */
 body.dark-mode {
-    background-color: #333;
-    color: #ddd;
+    background-color: #1e1e2e; /* base */
+    color: #cdd6f4; /* text */
 }
 
 .radio-player.dark-mode {
-    background-color: #444;
-    color: #ddd;
+    background-color: #313244; /* surface0 */
+    color: #cdd6f4; /* text */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
-select,
-input[type="checkbox"] {
-    border: 1px solid #666;
-    background-color: #555;
-    color: #ddd;
+.dark-mode select {
+    background-color: #45475a; /* surface1 */
+    color: #cdd6f4; /* text */
+    border-color: #6c7086; /* overlay0 */
 }
 
-select option {
-    background-color: #444;
-    color: #ddd;
+.dark-mode select option {
+    background-color: #45475a; /* surface1 */
+    color: #cdd6f4; /* text */
 }
 
-button {
-    background-color: #007bff;
-    color: white;
+.dark-mode button {
+    background-color: #89b4fa; /* blue */
+    color: #1e1e2e; /* base */
 }
 
-button:disabled {
-    background-color: #555;
+.dark-mode button:disabled {
+    background-color: #45475a; /* surface1 */
+    color: #6c7086; /* overlay0 */
 }
 
-.theme-switcher {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.dark-mode button:hover:not(:disabled) {
+    background-color: #b4befe; /* lavender */
+}
+
+/* Update input styles for dark mode */
+.dark-mode input[type="checkbox"] {
+    accent-color: #89b4fa; /* blue */
+}
+
+.dark-mode label {
+    color: #cdd6f4; /* text */
 }
