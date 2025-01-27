@@ -17,19 +17,19 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
-    "@astrojs/cloudflare": "^12.1.0",
+    "@astrojs/cloudflare": "^12.2.1",
     "@astrojs/mdx": "4.0.3",
-    "@astrojs/node": "^9.0.0",
-    "@astrojs/rss": "^4.0.10",
+    "@astrojs/node": "^9.0.2",
+    "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/tailwind": "^5.1.4",
+    "@astrojs/tailwind": "^5.1.5",
     "@catppuccin/tailwindcss": "^0.1.6",
-    "@fontsource/inter": "^5.1.0",
-    "@fontsource/lora": "^5.1.0",
-    "@tailwindcss/typography": "^0.5.15",
+    "@fontsource/inter": "^5.1.1",
+    "@fontsource/lora": "^5.1.1",
+    "@tailwindcss/typography": "^0.5.16",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
-    "astro": "^5.1.1",
+    "astro": "^5.1.9",
     "clsx": "^2.1.1",
     "eslint": "^8.57.1",
     "eslint-plugin-astro": "^0.32.0",
@@ -37,7 +37,7 @@
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.3"
   },
   "pnpm": {
     "overrides": {
@@ -56,10 +56,15 @@
       "nanoid@<3.3.8": ">=3.3.8",
       "astro@<4.16.17": ">=4.16.17",
       "astro@<=4.16.17": ">=4.16.18"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "workerd"
+    ]
   },
   "devDependencies": {
     "@cloudflare/kv-asset-handler": "^0.3.4",
-    "wrangler": "^3.99.0"
+    "wrangler": "^3.105.1"
   }
 }
