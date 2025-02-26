@@ -5,11 +5,9 @@ import tailwind from "@astrojs/tailwind";
 import cloudflare from '@astrojs/cloudflare';
 
 const DOMAINS = {
-  primary: 'https://ploszukiwacz.pl',
-  secondary: 'https://ploszukiwacz.xyz',
-  tertiary: 'https://ploszukiwacz.is-a.dev',
-  fourth: 'https://ploszukiwacz.tech',
-  development: 'http://localhost:3000'
+  main: 'https://ploszukiwacz.is-a.dev',
+  development: 'http://localhost:4321',
+  development2: 'https://4321-code.ploszukiwacz.is-a.dev',
 };
 
 const validateDomain = (domain) => {
@@ -24,7 +22,7 @@ const validateDomain = (domain) => {
 const currentDomain = validateDomain(
   process.env.SITE_DOMAIN 
     ? DOMAINS[process.env.SITE_DOMAIN]
-    : DOMAINS.primary
+    : DOMAINS.main
 );
 
 
@@ -43,4 +41,11 @@ export default defineConfig({
     }),
     tailwind(),
   ],
+  vite: {
+    server: {
+      host: '0.0.0.0',
+      port: 4321,
+      allowedHosts: true
+    }
+  }
 });

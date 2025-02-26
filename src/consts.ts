@@ -1,8 +1,8 @@
 import type { Site, Metadata, Socials } from "@types";
 
 export const SITE: Site = {
-  NAME: "IGoByARealyLongNickName",
-  EMAIL: "admin@ploszukiwacz.pl",
+  NAME: "PlOszukiwacz",
+  EMAIL: "admin@ploszukiwacz.is-a.dev",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 2,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
@@ -10,12 +10,12 @@ export const SITE: Site = {
 
 export const HOME: Metadata = {
   TITLE: "Home",
-  DESCRIPTION: "IGoByARealyLongNickName's Portfolio Website",
+  DESCRIPTION: "PlOszukiwacz's Portfolio Website, built in the amazing Astro framework.",
 };
 
 export const WORK: Metadata = {
   TITLE: "Work",
-  DESCRIPTION: "Where I have worked and what I have done.",
+  DESCRIPTION: "Where I have worked and what I have done. (soon:tm:)",
 };
 
 export const PROJECTS: Metadata = {
@@ -51,15 +51,15 @@ export const FRIENDS: Metadata = {
     },
     {
       name: "BoomBolt",
-      url: "https://boombolt.xyz/"
+      url: "https://boombolt.xyz"
     },
     {
       name: "Aqui",
-      url: "https://aquiffoo.vercel.app/"
+      url: "https://aquiffoo.vercel.app"
     },
     {
       name: "ComputerBlade",
-      url: "https://computerblade.is-a.dev/"
+      url: "https://computerblade.is-a.dev"
     },
     {
       name: "FlameFox",
@@ -67,11 +67,27 @@ export const FRIENDS: Metadata = {
     },
     {
       name: "Goober",
-      url: "https://mateishome.page/"
+      url: "https://mateishome.page"
     },
     {
       name: "Cyteon",
       url: "https://cyteon.tech"
+    },
+    {
+      name: "Alexx",
+      url: "https://uhalexz.xyz"
+    },
+    {
+      name: "Lezetho",
+      url: "https://lezetho.co.uk"
+    },
+    {
+      name: "Fynn",
+      url: "https://fynn.devcreates.lol"
+    },
+    {
+      name: "Josh",
+      url: "https://github.com/asleepynerd"
     }
   ]
 };
