@@ -3,9 +3,10 @@ import { getCollection } from "astro:content";
 import Container from "@components/Container.astro";
 import PageLayout from "@layouts/PageLayout.astro";
 import ArrowCard from "@components/ArrowCard.astro";
+import SmallArrowCard from "@components/SmallArrowCard.astro";
 import Link from "@components/Link.astro";
 // import { dateRange } from "@lib/utils";
-import { SITE, HOME, SOCIALS } from "@consts";
+import { SITE, HOME, SOCIALS, IDENTITIES } from "@consts";
 import { Image } from "astro:assets";
 
 // const blog = (await getCollection("blog"))
@@ -14,9 +15,9 @@ import { Image } from "astro:assets";
 //   .slice(0,SITE.NUM_POSTS_ON_HOMEPAGE);
 
 const projects = (await getCollection("projects"))
-  .filter(project => !project.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0,SITE.NUM_PROJECTS_ON_HOMEPAGE);
+    .filter((project) => !project.data.draft)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+    .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
 
 // const allwork = (await getCollection("work"))
 //   .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf())
@@ -31,35 +32,52 @@ const projects = (await getCollection("projects"))
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
-  <Container>
-    <h4 class="animate font-semibold text-black dark:text-white">
-      Hi, I'm PlOszukiwacz <span class="text-xl">👋🏻</span> 
-    </h4>
-    <div class="space-y-16">
-      <section>
-        <article class="space-y-4">
-          <p class="animate">
-            I am a passionate developer focused on creating clean and efficient code. You can learn more <Link href="/info">here</Link>.
-          </p>
-          <p class="animate">
-            I am currently contributing to a desktop app for bsky.
-          </p>
-          <p class="animate">
-            Fun Fact: This website requires javascript.
-          </p>
-          <p class="animate flex flex-row flex-wrap gap-[5px] max-w-full">
-            <a href="https://mozilla.org/en-US/firefox/new">
-              <Image src="/88x31/firefox.png" width="88" height="31" alt="Firefox" title="Firefox" />
-            </a>
-            <a href="https://ublockorigin.com">
-              <Image src="/88x31/ublock.png" width="88" height="31" alt="UBlock Origin" title="UBlock Origin" />
-            </a>
-          </p>
-        </article>
-      </section>
+    <Container>
+        <h4 class="animate font-semibold text-black dark:text-white">
+            Hi, I'm PlOszukiwacz <span class="text-xl">👋🏻</span>
+        </h4>
+        <div class="space-y-16">
+            <section>
+                <article class="space-y-4">
+                    <p class="animate">
+                        I am a passionate developer focused on creating clean
+                        and efficient code. You can learn more <Link
+                            href="/info">here</Link
+                        >.
+                    </p>
+                    <p class="animate">
+                        I am currently contributing to a desktop app for bsky.
+                    </p>
+                    <p class="animate">
+                        Fun Fact: This website requires javascript.
+                    </p>
+                    <p
+                        class="animate flex flex-row flex-wrap gap-[5px] max-w-full"
+                    >
+                        <a href="https://mozilla.org/en-US/firefox/new">
+                            <Image
+                                src="/88x31/firefox.png"
+                                width="88"
+                                height="31"
+                                alt="Firefox"
+                                title="Firefox"
+                            />
+                        </a>
+                        <a href="https://ublockorigin.com">
+                            <Image
+                                src="/88x31/ublock.png"
+                                width="88"
+                                height="31"
+                                alt="UBlock Origin"
+                                title="UBlock Origin"
+                            />
+                        </a>
+                    </p>
+                </article>
+            </section>
 
-      <!-- Maybe add this later? Somehow fetch data from blog.<my websites> -->
-      <!-- <section class="animate space-y-6">
+            <!-- Maybe add this later? Somehow fetch data from blog.<my websites> -->
+            <!-- <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">
             Latest posts
@@ -77,7 +95,7 @@ const projects = (await getCollection("projects"))
         </ul>
       </section> -->
 
-      <!-- <section class="animate space-y-6">
+            <!-- <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">
             Work Experience
@@ -106,61 +124,110 @@ const projects = (await getCollection("projects"))
         </ul>
       </section> -->
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Recent projects
-          </h5>
-          <Link href="/projects">
-            See all projects
-          </Link>
+            <section class="animate space-y-6">
+                <div
+                    class="flex flex-wrap gap-y-2 items-center justify-between"
+                >
+                    <h5 class="font-semibold text-black dark:text-white">
+                        Recent projects
+                    </h5>
+                    <Link href="/projects"> See all projects </Link>
+                </div>
+                <ul class="flex flex-col gap-4">
+                    {
+                        projects.map((project) => (
+                            <li>
+                                <ArrowCard entry={project} />
+                            </li>
+                        ))
+                    }
+                </ul>
+            </section>
+
+            <section class="animate space-y-4">
+                <h5 class="font-semibold text-black dark:text-white">
+                    Identities
+                </h5>
+                <div class="space-y-16">
+                    <section>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {IDENTITIES?.map((identity) => (
+                                    <SmallArrowCard href={identity.HREF} class="p-6 hover:scale-105 transition-all duration-300 animate">
+                                        <div class="flex flex-col gap-2">
+                                            <h3 class="text-lg font-medium">
+                                                {identity.NAME}
+                                            </h3>
+                                        </div>
+                                    </SmallArrowCard>
+                            ))}
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <section class="animate space-y-4">
+                <h5 class="font-semibold text-black dark:text-white">
+                    Let's Connect
+                </h5>
+                <article>
+                    <p>
+                        If you want to get in touch with me about something or
+                        just to say hi, reach out on social media or send me an
+                        email.
+                    </p>
+                </article>
+                <ul class="flex flex-wrap gap-2">
+                    {
+                        SOCIALS.map((SOCIAL) => (
+                            <li class="flex gap-x-2 text-nowrap">
+                                <Link
+                                    href={SOCIAL.HREF}
+                                    external
+                                    aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}
+                                >
+                                    {SOCIAL.NAME}
+                                </Link>
+                                {"/"}
+                            </li>
+                        ))
+                    }
+                    <li class="line-clamp-1">
+                        <Link
+                            href={`mailto:${SITE.EMAIL}`}
+                            aria-label={`Email ${SITE.NAME}`}
+                        >
+                            {SITE.EMAIL}
+                        </Link>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- HackClub Webring -->
+            <div id="webring-wrapper" class="animate">
+                <h5 class="font-semibold text-black dark:text-white">
+                    Click the arrows to see the websites of other Hack Club
+                    members
+                </h5>
+                <a
+                    href="https://webring.hackclub.com/"
+                    id="previousBtn"
+                    class="webring-anchor"
+                    title="Previous">‹</a
+                >
+                <a
+                    href="https://webring.hackclub.com/"
+                    class="webring-logo"
+                    title="Hack Club Webring"></a>
+                <a
+                    href="https://webring.hackclub.com/"
+                    id="nextBtn"
+                    class="webring-anchor"
+                    title="Next">›</a
+                >
+                <script
+                    src="https://webring.hackclub.com/public/embed.min.js"
+                    defer></script>
+            </div>
         </div>
-        <ul class="flex flex-col gap-4">
-          {projects.map(project => (
-            <li>
-              <ArrowCard entry={project} />
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section class="animate space-y-4">
-        <h5 class="font-semibold text-black dark:text-white">
-          Let's Connect
-        </h5>
-        <article>
-          <p>
-            If you want to get in touch with me about something or just to say hi,
-            reach out on social media or send me an email.
-          </p>
-        </article>
-        <ul class="flex flex-wrap gap-2">
-          {SOCIALS.map(SOCIAL => (
-            <li class="flex gap-x-2 text-nowrap">
-              <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
-                {SOCIAL.NAME}
-              </Link>
-              {"/"}
-            </li>
-          ))}
-          <li class="line-clamp-1">
-            <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
-              {SITE.EMAIL}
-            </Link>
-          </li>
-        </ul>
-      </section>
-
-      <!-- HackClub Webring -->
-      <div id="webring-wrapper" class="animate">
-        <h5 class="font-semibold text-black dark:text-white">
-          Click the arrows to see the websites of other Hack Club members
-        </h5>
-        <a href="https://webring.hackclub.com/" id="previousBtn" class="webring-anchor" title="Previous">‹</a>
-        <a href="https://webring.hackclub.com/" class="webring-logo" title="Hack Club Webring"></a>
-        <a href="https://webring.hackclub.com/" id="nextBtn" class="webring-anchor" title="Next">›</a>
-        <script src="https://webring.hackclub.com/public/embed.min.js"></script>
-      </div>
-    </div>
-  </Container>
+    </Container>
 </PageLayout>

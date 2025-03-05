@@ -1,4 +1,4 @@
-import type { Site, Metadata, Socials } from "@types";
+import type { Site, Metadata, Socials, Identity } from "@types";
 
 export const SITE: Site = {
   NAME: "PlOszukiwacz",
@@ -10,7 +10,8 @@ export const SITE: Site = {
 
 export const HOME: Metadata = {
   TITLE: "Home",
-  DESCRIPTION: "PlOszukiwacz's Portfolio Website, built in the amazing Astro framework.",
+  DESCRIPTION:
+    "PlOszukiwacz's Portfolio Website, built in the amazing Astro framework.",
 };
 
 export const WORK: Metadata = {
@@ -20,18 +21,19 @@ export const WORK: Metadata = {
 
 export const PROJECTS: Metadata = {
   TITLE: "Projects",
-  DESCRIPTION: "A collection of my projects, with links to repositories and demos.",
+  DESCRIPTION:
+    "A collection of my projects, with links to repositories and demos.",
 };
 
 export const INFO: Metadata = {
   TITLE: "Info",
   DESCRIPTION: "Some info about me.",
 };
+
 export const DONATE: Metadata = {
   TITLE: "Donate",
   DESCRIPTION: "Offical ways of donating to me.",
 };
-
 
 export const FRIENDS: Metadata = {
   TITLE: "Friends",
@@ -39,78 +41,81 @@ export const FRIENDS: Metadata = {
   list: [
     {
       name: "Mkeko",
-      url: "https://mkeko.pro"
+      url: "https://mkeko.pro",
     },
     {
       name: "GizzyUwU",
-      url: "https://www.gizzy.pro"
+      url: "https://www.gizzy.pro",
     },
     {
       name: "Felix",
-      url: "https://felixrnr.com"
+      url: "https://felixrnr.com",
     },
     {
       name: "BoomBolt",
-      url: "https://boombolt.xyz"
+      url: "https://boombolt.xyz",
     },
     {
       name: "Aqui",
-      url: "https://aquiffoo.vercel.app"
+      url: "https://aquiffoo.vercel.app",
     },
     {
       name: "ComputerBlade",
-      url: "https://computerblade.is-a.dev"
+      url: "https://computerblade.is-a.dev",
     },
     {
       name: "FlameFox",
-      url: "#"
+      url: "#",
     },
     {
-      name: "Goober",
-      url: "https://mateishome.page"
-    },
-    {
-      name: "Cyteon",
-      url: "https://cyteon.tech"
+      name: "Matei",
+      url: "https://mateishome.page",
     },
     {
       name: "Alexx",
-      url: "https://uhalexz.xyz"
+      url: "https://uhalexz.xyz",
     },
     {
       name: "Lezetho",
-      url: "https://lezetho.co.uk"
+      url: "https://lezetho.co.uk",
     },
     {
       name: "Fynn",
-      url: "https://fynn.devcreates.lol"
+      url: "https://fynn.devcreates.lol",
     },
     {
       name: "Josh",
-      url: "https://github.com/asleepynerd"
-    }
-  ]
+      url: "https://github.com/asleepynerd",
+    },
+  ],
 };
 
 export const SOCIALS: Socials = [
-  { 
+  {
     NAME: "twitter-x",
     HREF: "https://twitter.com/ploszukiwacz",
   },
-  { 
+  {
     NAME: "github",
-    HREF: "https://github.com/PlOszukiwaczDEV"
+    HREF: "https://github.com/PlOszukiwaczDEV",
   },
-  { 
+  {
     NAME: "discord",
     HREF: "https://discord.com/users/783390611121111040",
   },
   {
     NAME: "bsky",
-    HREF: "https://bsky.app/profile/ploszukiwacz.bsky.social"
+    HREF: "https://bsky.app/profile/ploszukiwacz.bsky.social",
   },
   {
     NAME: "mastodon",
-    HREF: "https://mastodon.social/@ploszukiwacz"
-  }
+    HREF: "https://mastodon.social/@ploszukiwacz",
+  },
+];
+
+export const IDENTITIES: Identity = [
+  {
+    NAME: "PGP",
+    HREF: "/pgp_public.asc",
+  },
 ];

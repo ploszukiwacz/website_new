@@ -11,6 +11,10 @@ export type Friend = {
   url: string;
 }
 
+export type Identity = {
+  NAME: string;
+  HREF: string;
+}[];
 
 export type Metadata = {
   TITLE: string;

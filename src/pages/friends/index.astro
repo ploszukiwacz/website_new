@@ -1,7 +1,7 @@
 ---
 import Container from "@components/Container.astro";
 import PageLayout from "@layouts/PageLayout.astro";
-import FriendCard from "@components/FriendCard.astro";
+import SmallArrowCard from "@components/SmallArrowCard.astro";
 import { FRIENDS } from "@consts";
 ---
 
@@ -14,14 +14,14 @@ import { FRIENDS } from "@consts";
       <section>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {FRIENDS.list?.map((friend) => (
-            <FriendCard
+            <SmallArrowCard
               href={friend.url}
               class="p-6 hover:scale-105 transition-all duration-300 animate"
             >
               <div class="flex flex-col gap-2">
                 <h3 class="text-lg font-medium">{friend.name}</h3>
               </div>
-            </FriendCard>
+            </SmallArrowCard>
           ))}
         </div>
       </section>     
