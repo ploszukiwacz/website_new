@@ -97,7 +97,7 @@ export const SOCIALS: Socials = [
   },
   {
     NAME: "github",
-    HREF: "https://github.com/PlOszukiwaczDEV",
+    HREF: "https://github.com/ploszukiwacz",
   },
   {
     NAME: "discord",
