@@ -1,4 +1,4 @@
-import type { Site, Metadata, Socials, Identity } from "@types";
+import type { Site, Metadata, Socials, Identity, Stuffiuse } from "@types";
 
 export const SITE: Site = {
   NAME: "PlOszukiwacz",
@@ -118,4 +118,55 @@ export const IDENTITIES: Identity = [
     NAME: "PGP",
     HREF: "/pgp_public.asc",
   },
+];
+
+export const STUFFIUSE: Stuffiuse = [
+  {
+    NAME: "Fedora",
+    HREF: "https://getfedora.org",
+  },
+  {
+    NAME: "Windows",
+    HREF: "https://www.microsoft.com/windows",
+  },
+  {
+    NAME: "VSCode",
+    HREF: "https://code.visualstudio.com",
+  },
+  {
+    NAME: "VS",
+    HREF: "https://visualstudio.com"
+  },
+  {
+    NAME: "Docker",
+    HREF: "https://www.docker.com",
+  },
+  {
+    NAME: "GitHub",
+    HREF: "https://github.com",
+  },
+  {
+    NAME: "JavaScript",
+    HREF: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  {
+    NAME: "TypeScript",
+    HREF: "https://www.typescriptlang.org",
+  },
+  {
+    NAME: "Node.js",
+    HREF: "https://nodejs.org",
+  },
+  {
+    NAME: "pnpm",
+    HREF: "https://pnpm.io",
+  },
+  {
+    NAME: "Astro",
+    HREF: "https://astro.build",
+  },
+  {
+    NAME: "Termius",
+    HREF: "https://termius.com",
+  }
 ];

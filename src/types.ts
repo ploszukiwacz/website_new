@@ -16,6 +16,11 @@ export type Identity = {
   HREF: string;
 }[];
 
+export type Stuffiuse = {
+  NAME: string;
+  HREF: string;
+}[];
+
 export type Metadata = {
   TITLE: string;
   DESCRIPTION: string;
