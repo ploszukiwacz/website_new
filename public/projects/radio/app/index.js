@@ -9,6 +9,12 @@ const radioStations = {
     { name: "Radio ZET", url: "https://r.dcs.redcdn.pl/sc/o2/Eurozet/live/audio.livx", },
     { name: "Radio RMF MAXXX", url: "https://rs9-krk2-cyfronet.rmfstream.pl/RMFMAXXX48", },
   ],
+  Romania: [
+    { name: "Digi FM", url: "https://edge76.rcs-rds.ro/digifm/digifm.mp3" },
+    { name: "Kiss FM", url: "https://live.kissfm.ro/kissfm.aacp" },
+    { name: "Magic FM", url: "https://live.magicfm.ro/magicfm.aacp" },
+    { name: "Europa FM", url: "https://astreaming.edi.ro:8443/EuropaFM_aac" },
+  ],
   USA: [
     
   ],
