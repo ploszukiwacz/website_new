@@ -72,10 +72,6 @@ export const FRIENDS: Metadata = {
       url: "https://mateishome.page",
     },
     {
-      name: "Alexx",
-      url: "https://uhalexz.xyz",
-    },
-    {
       name: "Lezetho",
       url: "https://lezetho.co.uk",
     },
@@ -84,7 +80,7 @@ export const FRIENDS: Metadata = {
       url: "https://fynn.devcreates.lol",
     },
     {
-      name: "Josh",
+      name: "Ella",
       url: "https://github.com/asleepynerd",
     },
   ],
@@ -122,20 +118,12 @@ export const IDENTITIES: Identity = [
 
 export const STUFFIUSE: Stuffiuse = [
   {
-    NAME: "Fedora",
-    HREF: "https://getfedora.org",
+    NAME: "Arch",
+    HREF: "https://archlinux.org",
   },
   {
-    NAME: "Windows",
-    HREF: "https://www.microsoft.com/windows",
-  },
-  {
-    NAME: "VSCode",
-    HREF: "https://code.visualstudio.com",
-  },
-  {
-    NAME: "VS",
-    HREF: "https://visualstudio.com"
+    NAME: "Zed",
+    HREF: "https://zed.dev",
   },
   {
     NAME: "Docker",
