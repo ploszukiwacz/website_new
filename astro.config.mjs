@@ -2,12 +2,13 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import cloudflare from '@astrojs/cloudflare';
+import cloudflare from "@astrojs/cloudflare";
+import image from "@astrojs/image";
+import react from "@astrojs/react";
 
 const DOMAINS = {
-  main: 'https://ploszukiwacz.is-a.dev',
-  development: 'http://localhost:4321',
-  development2: 'https://4321-code.ploszukiwacz.is-a.dev',
+  main: "https://ploszukiwacz.is-a.dev",
+  development: "http://localhost:4321",
 };
 
 const validateDomain = (domain) => {
@@ -20,19 +21,24 @@ const validateDomain = (domain) => {
 };
 
 const currentDomain = validateDomain(
-  process.env.SITE_DOMAIN 
+  process.env.SITE_DOMAIN
     ? DOMAINS[process.env.SITE_DOMAIN]
     : DOMAINS.main
 );
 
 
 export default defineConfig({
-  output: 'server',
+  output: "server",
+  compressHTML: true,
+  build: {
+    inlineStylesheets: "always",
+    minify: true,
+  },
   adapter: cloudflare({
-    mode: 'directory'
+    mode: "directory"
   }),
-  site: process.env.NODE_ENV === 'development' 
-    ? DOMAINS.development 
+  site: process.env.NODE_ENV === "development"
+    ? DOMAINS.development
     : currentDomain,
   integrations: [
     mdx(),
@@ -40,6 +46,10 @@ export default defineConfig({
       customPages: Object.values(DOMAINS).filter(d => d !== DOMAINS.development)
     }),
     tailwind(),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp"
+    }),
+    react(),
   ],
   vite: {
     server: {
