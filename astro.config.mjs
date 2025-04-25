@@ -3,8 +3,6 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import cloudflare from "@astrojs/cloudflare";
-import image from "@astrojs/image";
-import react from "@astrojs/react";
 
 const DOMAINS = {
   main: "https://ploszukiwacz.is-a.dev",
@@ -46,14 +44,10 @@ export default defineConfig({
       customPages: Object.values(DOMAINS).filter(d => d !== DOMAINS.development)
     }),
     tailwind(),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp"
-    }),
-    react(),
   ],
   vite: {
     server: {
-      host: '0.0.0.0',
+      host: "0.0.0.0",
       port: 4321,
       allowedHosts: true
     }
