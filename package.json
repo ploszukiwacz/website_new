@@ -17,19 +17,19 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
-    "@astrojs/cloudflare": "^12.2.1",
+    "@astrojs/cloudflare": "^12.5.1",
     "@astrojs/mdx": "4.0.3",
-    "@astrojs/node": "^9.0.2",
+    "@astrojs/node": "^9.2.1",
     "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/sitemap": "^3.3.1",
     "@astrojs/tailwind": "^5.1.5",
     "@catppuccin/tailwindcss": "^0.1.6",
-    "@fontsource/inter": "^5.1.1",
-    "@fontsource/lora": "^5.1.1",
+    "@fontsource/inter": "^5.2.5",
+    "@fontsource/lora": "^5.2.5",
     "@tailwindcss/typography": "^0.5.16",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
-    "astro": "^5.1.9",
+    "astro": "^5.7.5",
     "clsx": "^2.1.1",
     "eslint": "^8.57.1",
     "eslint-plugin-astro": "^0.32.0",
@@ -37,7 +37,7 @@
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.3"
   },
   "pnpm": {
     "overrides": {
@@ -64,7 +64,6 @@
     ]
   },
   "devDependencies": {
-    "@cloudflare/kv-asset-handler": "^0.3.4",
-    "wrangler": "^3.105.1"
+    "@cloudflare/kv-asset-handler": "^0.3.4"
   }
 }
