@@ -25,11 +25,6 @@ export const PROJECTS: Metadata = {
     "A collection of my projects, with links to repositories and demos.",
 };
 
-export const INFO: Metadata = {
-  TITLE: "Info",
-  DESCRIPTION: "Some info about me.",
-};
-
 export const DONATE: Metadata = {
   TITLE: "Donate",
   DESCRIPTION: "Offical ways of donating to me.",

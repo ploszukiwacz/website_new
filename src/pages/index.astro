@@ -9,6 +9,7 @@ import Link from "@components/Link.astro";
 import { SITE, HOME, SOCIALS, IDENTITIES, STUFFIUSE } from "@consts";
 import { Image } from "astro:assets";
 
+const GITHUB_USERNAME = "ploszukiwacz";
 // const blog = (await getCollection("blog"))
 //   .filter(post => !post.data.draft)
 //   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -33,45 +34,51 @@ const projects = (await getCollection("projects"))
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
     <Container>
-        <h4 class="animate font-semibold text-black dark:text-white">
+        <h1 class="animate font-semibold text-black dark:text-white">
             Hi, I'm PlOszukiwacz <span class="text-xl">👋🏻</span>
-        </h4>
+        </h1>
         <div class="space-y-16">
             <section>
                 <article class="space-y-4">
                     <p class="animate">
                         I am a passionate developer focused on creating clean
-                        and efficient code. You can learn more <Link
-                            href="/info">here</Link
-                        >.
+                        and efficient code.
                     </p>
                     <p class="animate">
                         I am currently contributing to a desktop app for bsky.
                     </p>
+
+                    <!-- Github Stats -->
                     <p class="animate">
-                        Fun Fact: This website requires javascript.
-                    </p>
-                    <p
-                        class="animate flex flex-row flex-wrap gap-[5px] max-w-full"
-                    >
-                        <a href="https://mozilla.org/en-US/firefox/new">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 animate">
+                          <!-- GitHub Stats Card -->
+                          <div class="card-element">
                             <Image
-                                src="/88x31/firefox.png"
-                                width="88"
-                                height="31"
-                                alt="Firefox"
-                                title="Firefox"
+                              src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&theme=catppuccin_mocha&hide_border=true&count_private=true`}
+                              alt="GitHub Stats"
+                              class="w-full"
+                              width={495}
+                              height={195}
+                              loading="eager"
+                              decoding="sync"
+                              priority={true}
                             />
-                        </a>
-                        <a href="https://ublockorigin.com">
+                          </div>
+
+                          <!-- Top Languages Card -->
+                          <div class="card-element">
                             <Image
-                                src="/88x31/ublock.png"
-                                width="88"
-                                height="31"
-                                alt="UBlock Origin"
-                                title="UBlock Origin"
+                              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USERNAME}&layout=compact&theme=catppuccin_mocha&hide_border=true`}
+                              alt="Top Languages"
+                              class="w-full"
+                              width={495}
+                              height={195}
+                              loading="eager"
+                              decoding="sync"
+                              priority={true}
                             />
-                        </a>
+                          </div>
+                        </div>
                     </p>
                 </article>
             </section>
@@ -124,9 +131,10 @@ const projects = (await getCollection("projects"))
         </ul>
       </section> -->
 
+            <!-- Stuff I use and skills -->
             <section class="animate space-y-6">
                 <div class="flex flex-wrap gap-y-2 items-center justify-between">
-                    <h5 class="font-semibold text-black dark:text-white">Stuff i use & Skills</h5>
+                    <h2 class="font-semibold text-black dark:text-white">Stuff i use & Skills</h2>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {STUFFIUSE?.map((thing) => (
@@ -141,13 +149,14 @@ const projects = (await getCollection("projects"))
                 </div>
             </section>
 
+            <!-- Projects -->
             <section class="animate space-y-6">
                 <div
                     class="flex flex-wrap gap-y-2 items-center justify-between"
                 >
-                    <h5 class="font-semibold text-black dark:text-white">
+                    <h2 class="font-semibold text-black dark:text-white">
                         Recent projects
-                    </h5>
+                    </h2>
                     <Link href="/projects"> See all projects </Link>
                 </div>
                 <ul class="flex flex-col gap-4">
@@ -161,10 +170,11 @@ const projects = (await getCollection("projects"))
                 </ul>
             </section>
 
+            <!-- Identities -->
             <section class="animate space-y-4">
-                <h5 class="font-semibold text-black dark:text-white">
+                <h2 class="font-semibold text-black dark:text-white">
                     Identities
-                </h5>
+                </h2>
                 <div class="space-y-16">
                     <section>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -182,10 +192,11 @@ const projects = (await getCollection("projects"))
                 </div>
             </section>
 
+            <!-- Contact Section -->
             <section class="animate space-y-4">
-                <h5 class="font-semibold text-black dark:text-white">
+                <h2 class="font-semibold text-black dark:text-white">
                     Let's Connect
-                </h5>
+                </h2>
                 <article>
                     <p>
                         If you want to get in touch with me about something or
@@ -221,16 +232,15 @@ const projects = (await getCollection("projects"))
 
             <!-- HackClub Webring -->
             <div id="webring-wrapper" class="animate">
-                <h5 class="font-semibold text-black dark:text-white">
+                <h2 class="font-semibold text-black dark:text-white">
                     Click the arrows to see the websites of other Hack Club
                     members
-                </h5>
+                </h2>
                 <a
                     href="https://webring.hackclub.com/"
                     id="previousBtn"
                     class="webring-anchor"
-                    title="Previous">‹</a
-                >
+                    title="Previous">‹</a>
                 <a
                     href="https://webring.hackclub.com/"
                     class="webring-logo"
@@ -239,12 +249,36 @@ const projects = (await getCollection("projects"))
                     href="https://webring.hackclub.com/"
                     id="nextBtn"
                     class="webring-anchor"
-                    title="Next">›</a
-                >
-                <script
-                    src="https://webring.hackclub.com/public/embed.min.js"
-                    defer></script>
+                    title="Next">›</a>
+                <script src="https://webring.hackclub.com/public/embed.min.js" defer></script>
             </div>
+
+            <!-- 88x31 Buttons -->
+            <section class="animate">
+                <div class="flex flex-wrap items-center justify-between">
+                    <h2 class="font-semibold text-black dark:text-white">Silly Buttons</h2>
+                </div>
+                <div class="flex flex-row flex-wrap gap-[5px] max-w-full">
+                    <Link href="https://mozilla.org/en-US/firefox/new" external>
+                        <Image
+                            src="/88x31/firefox.png"
+                            width="88"
+                            height="31"
+                            alt="Get Moz://a Firefox Browser"
+                            title="Download Firefox"
+                        />
+                    </Link>
+                    <Link href="https://ublockorigin.com" external>
+                        <Image
+                            src="/88x31/ublock.png"
+                            width="88"
+                            height="31"
+                            alt="Get UBlock Origin"
+                            title="UBlock Origin"
+                        />
+                    </Link>
+                </div>
+            </section>
         </div>
     </Container>
 </PageLayout>
