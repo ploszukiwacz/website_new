@@ -89,26 +89,37 @@ import { BDAY } from "@consts";
 </style>
 
 <script>
-  function updateCountdown() {
-    const targetDate = new Date('2025-05-20T00:00:00').getTime();
+  function updateCountdown(): void {
+    const targetDate: number = new Date('2025-05-20T00:00:00').getTime();
 
-    function update() {
-      const now = new Date().getTime();
-      const difference = targetDate - now;
+    function update(): void {
+      const now: number = new Date().getTime();
+      const difference: number = targetDate - now;
 
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+      const days: number = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours: number = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes: number = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds: number = Math.floor((difference % (1000 * 60)) / 1000);
 
-      document.querySelector('.days').textContent = days.toString().padStart(2, '0');
-      document.querySelector('.hours').textContent = hours.toString().padStart(2, '0');
-      document.querySelector('.minutes').textContent = minutes.toString().padStart(2, '0');
-      document.querySelector('.seconds').textContent = seconds.toString().padStart(2, '0');
+      const daysElement = document.querySelector('.days')!;
+      const hoursElement = document.querySelector('.hours')!;
+      const minutesElement = document.querySelector('.minutes')!;
+      const secondsElement = document.querySelector('.seconds')!;
+      const containerElement = document.querySelector('.countdown-container')!;
+
+      if (!daysElement || !hoursElement || !minutesElement || !secondsElement || !containerElement) {
+        console.error('Required elements not found');
+        return;
+      }
+
+      daysElement.textContent = days.toString().padStart(2, '0');
+      hoursElement.textContent = hours.toString().padStart(2, '0');
+      minutesElement.textContent = minutes.toString().padStart(2, '0');
+      secondsElement.textContent = seconds.toString().padStart(2, '0');
 
       if (difference < 0) {
         clearInterval(interval);
-        document.querySelector('.countdown-container').innerHTML = '<h2>The day has arrived!</h2>';
+        containerElement.innerHTML = '<h2>The day has arrived!</h2>';
       }
     }
 
