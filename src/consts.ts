@@ -81,6 +81,12 @@ export const FRIENDS: Metadata = {
   ],
 };
 
+export const BDAY: Metadata = {
+  TITLE: ":3",
+  DESCRIPTION: ":3c:"
+}
+
+
 export const SOCIALS: Socials = [
   {
     NAME: "twitter-x",
