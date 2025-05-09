@@ -1,0 +1,66 @@
+---
+interface Props {
+  show?: boolean;
+}
+
+const { show = true } = Astro.props;
+---
+
+<div id="millionth-visitor" class="fixed bottom-4 right-4 z-50 hidden animate">
+  <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-4 border border-gray-200 dark:border-gray-700 w-72">
+    <button id="close-popup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <div class="text-center space-y-2 pt-2">
+      <h3 class="text-sm font-semibold text-gray-900 dark:text-white">
+        🎉 Congratulations!
+      </h3>
+      <p class="text-xs text-gray-600 dark:text-gray-300">
+        You're our 1,000,000th visitor!
+      </p>
+      <button id="claim-prize" class="w-full bg-green-500 hover:bg-green-600 text-white text-sm font-medium py-1.5 px-4 rounded transition-colors">
+        Claim Your Prize! 🎁
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { getCookie, setCookie, incrementVisitCount } from '@lib/cookie';
+
+  function initPopup() {
+    const popup = document.getElementById('millionth-visitor');
+    const closeBtn = document.getElementById('close-popup');
+    const claimBtn = document.getElementById('claim-prize');
+
+    // Check if this is the millionth visit
+    const visitCount = incrementVisitCount();
+    const popupShown = sessionStorage.getItem('millionthPopupShown') === 'true';
+
+    if (visitCount === 1000000 && !popupShown) {
+      setTimeout(() => {
+        popup?.classList.remove('hidden');
+      }, 1000);
+    }
+
+    // Close popup
+    closeBtn?.addEventListener('click', () => {
+      popup?.classList.add('hidden');
+      sessionStorage.setItem('millionthPopupShown', 'true');
+    });
+
+    // Rickroll on claim
+    claimBtn?.addEventListener('click', () => {
+      window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+    });
+
+    // Debug: show current visit count in console
+    console.log(`Visit count: ${visitCount}`);
+  }
+
+  // Initialize on page load and after navigation
+  document.addEventListener('astro:page-load', initPopup);
+</script>
