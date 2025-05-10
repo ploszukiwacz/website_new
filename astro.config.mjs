@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import cloudflare from "@astrojs/cloudflare";
+import vercel from "@astrojs/vercel";
 
 const DOMAINS = {
   main: "https://ploszukiwacz.is-a.dev",
@@ -32,9 +32,7 @@ export default defineConfig({
     inlineStylesheets: "always",
     minify: true,
   },
-  adapter: cloudflare({
-    mode: "directory"
-  }),
+  adapter: vercel(),
   site: process.env.NODE_ENV === "development"
     ? DOMAINS.development
     : currentDomain,

@@ -23,6 +23,7 @@
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.3.1",
     "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/vercel": "^8.1.4",
     "@catppuccin/tailwindcss": "^0.1.6",
     "@fontsource/inter": "^5.2.5",
     "@fontsource/lora": "^5.2.5",
