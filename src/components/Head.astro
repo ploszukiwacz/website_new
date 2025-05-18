@@ -4,10 +4,13 @@ import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-600.css";
 import "@fontsource/lora/400.css";
 import "@fontsource/lora/600.css";
-import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2";
-import inter600 from "@fontsource/inter/files/inter-latin-600-normal.woff2";
-import lora400 from "@fontsource/lora/files/lora-latin-400-normal.woff2";
-import lora600 from "@fontsource/lora/files/lora-latin-600-normal.woff2";
+import "../styles/maple-mono.css";
+// import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2";
+// import inter600 from "@fontsource/inter/files/inter-latin-600-normal.woff2";
+// import lora400 from "@fontsource/lora/files/lora-latin-400-normal.woff2";
+// import lora600 from "@fontsource/lora/files/lora-latin-600-normal.woff2";
+import mapleMono400 from "/fonts/MapleMono-Regular.woff2";
+import mapleMono600 from "/fonts/MapleMono-Bold.woff2";
 import { ViewTransitions } from "astro:transitions";
 
 interface Props {
@@ -31,10 +34,12 @@ const { title, description, image = "/nano.png" } = Astro.props;
 <meta name="google-adsense-account" content="ca-pub-6158985749943148">
 
 <!-- Font preloads -->
-<link rel="preload" href={inter400} as="font" type="font/woff2" crossorigin/>
+<!-- <link rel="preload" href={inter400} as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href={inter600} as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href={lora400} as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href={lora600} as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href={lora600} as="font" type="font/woff2" crossorigin/> -->
+<link rel="preload" href={mapleMono400} as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href={mapleMono600} as="font" type="font/woff2" crossorigin/>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />

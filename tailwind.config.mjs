@@ -29,6 +29,7 @@ export default {
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
         serif: ["Lora", ...defaultTheme.fontFamily.serif],
+        mono: ["Maple Mono", ...defaultTheme.fontFamily.mono],
       },
       colors: {
         mocha: {

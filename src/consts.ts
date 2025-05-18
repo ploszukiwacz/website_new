@@ -89,16 +89,16 @@ export const BDAY: Metadata = {
 
 export const SOCIALS: Socials = [
   {
+    NAME: "matrix",
+    HREF: "https://matrix.to/#/@ploszukiwacz:matrix.org",
+  },
+  {
     NAME: "twitter-x",
     HREF: "https://twitter.com/ploszukiwacz",
   },
   {
     NAME: "github",
     HREF: "https://github.com/ploszukiwacz",
-  },
-  {
-    NAME: "discord",
-    HREF: "https://discord.com/users/783390611121111040",
   },
   {
     NAME: "bsky",
